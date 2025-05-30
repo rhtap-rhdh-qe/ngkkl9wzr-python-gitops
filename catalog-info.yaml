@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ngkkl9wzr-python-gitops
+  description: This is GitOps manifest for ngkkl9wzr-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=ngkkl9wzr-python
+    backstage.io/kubernetes-id: ngkkl9wzr-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ngkkl9wzr-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ngkkl9wzr-python
